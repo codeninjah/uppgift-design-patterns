@@ -10,3 +10,7 @@ En Meetup är en sammankomst för personer med ett gemensamt intresse. Det kan h
 - Som en besökare vill jag kunna rejta evenemang jag har varit på med skalan 1-5, för att ge feedback till arrangören och andra besökare
 - Som besökare vill jag kunna diskutera evenemang därför att vi kan komma med konstruktiv kritik.
 - Som användare vill jag ha möjligheten att skapa egna meetups därför att det kan finnas ett behov.
+
+## Uppgiftsbeskrivning
+
+https://docs.google.com/document/d/136DTDYFeX-N2n4-fI_kryrc2Fv1--wSA-94aIAdNDJE/edit (https://docs.google.com/document/d/136DTDYFeX-N2n4-fI_kryrc2Fv1--wSA-94aIAdNDJE/edit)
