@@ -31,4 +31,9 @@ describe("Test MeetupsView", () => {
     const mainDiv = wrapper.find('div')
     expect(mainDiv).toBeTruthy()
   })
+  it("renders a list", () => {
+    const wrapper = mount(<MeetupsView />)
+    const meetupsList = wrapper.find('li')
+    expect(meetupsList.exists()).toBe(true)
+  })
 })
