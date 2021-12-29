@@ -37,3 +37,4 @@ describe("Test MeetupsView", () => {
     expect(meetupsList.exists()).toBe(true)
   })
 })
+
