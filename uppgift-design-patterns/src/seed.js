@@ -19,3 +19,25 @@ let meetups = [
     "TED talks: Our Green Planet",
     "CryptoTalks"
 ]
+
+let meetupstestArr = []
+
+for(var meetup of meetups){
+    //console.log(meetup)
+    meetupstestArr.push(
+        {
+        "id": uuidv4(),
+        "name": meetup,
+        "date": DateGenerator.getRandomDateInRange(startDate, endDate),
+        "comments": []
+        }
+    )
+}
+
+for(var meetuptest of meetupstestArr){
+    console.log("Id: " + meetuptest.id + " Name: " + meetuptest.name)
+    console.log("Date: " + meetuptest.date + " Comments: " + meetuptest.comments)
+}
+
+
+
