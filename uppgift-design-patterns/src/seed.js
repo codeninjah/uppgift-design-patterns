@@ -10,7 +10,10 @@ let startDate = new Date(2021, 6, 30);
 let endDate = new Date(2022, 1, 20);
 //DateGenerator.getRandomDateInRange(startDate, endDate); // random date in range
 
-//let meetupI = new meetupInterface()
+
+
+
+
 
 let meetups = [
     "AWS",
@@ -40,7 +43,9 @@ for(var meetup of meetups){
 for(var meetuptest of meetupstestArr){
     console.log("Id: " + meetuptest.id + " Name: " + meetuptest.name)
     console.log("Date: " + meetuptest.date + " Comments: " + meetuptest.comments)
+    fs.writeFileSync("testdatabase.json", JSON.stringify(meetuptest))
 }
+
 
 
 
