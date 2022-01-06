@@ -1,0 +1,65 @@
+{
+    "Meetups" : [
+        {
+            "id": "12345",
+            "name": "AWS",
+            "date": "2021-12-10",
+            "comments": []
+        },
+        {
+            "id": "123456",
+            "name": "Code along with David",
+            "date": "2022-01-06",
+            "comments": []
+        },
+        {
+            "id": "1234567",
+            "name": "Coder's meetup",
+            "date": "2021-12-26",
+            "comments": []
+        },
+        {
+            "id": "12345678",
+            "name": "NASA's spaceshuttle launch",
+            "date": "2022-01-05",
+            "comments": []
+        },
+        {
+            "id": "123456789",
+            "name": "Elon's next big announcement",
+            "date": "2020-12-26",
+            "comments": []
+        },
+        {
+            "id": "1234567890",
+            "name": "Microsoft's Visual Studio 2022 launch",
+            "date": "2021-12-26",
+            "comments": []
+        },
+        {
+            "id": "0123456",
+            "name": "SpaceX",
+            "date": "2021-02-26",
+            "comments": []
+        },
+        {
+            "id": "01234567",
+            "name": "How to become an entrepreneur",
+            "date": "2021-12-10",
+            "comments": []
+        },
+        {
+            "id": "012345678",
+            "name": "TED talks: Our Green Planet",
+            "date": "2021-12-26",
+            "comments": []
+        },
+        {
+            "id": "0123456789",
+            "name": "CryptoTalks",
+            "date": "2022-01-26",
+            "comments": []
+        }
+    ]
+}
+
