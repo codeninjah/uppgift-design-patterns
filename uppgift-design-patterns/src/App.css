@@ -53,6 +53,7 @@
 
 .sorted-meetups-list-item {
   max-width: 250px;
+  padding: 10px;
 }
 
 .sorted-meetups-list-item:hover {
@@ -69,4 +70,8 @@
 
 ol  {
   list-style-type: none;
+}
+
+.inputContainer {
+  margin-top: 25px;
 }
