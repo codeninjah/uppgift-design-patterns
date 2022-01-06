@@ -11,8 +11,8 @@ let endDate = new Date(2022, 1, 20);
 //DateGenerator.getRandomDateInRange(startDate, endDate); // random date in range
 
 
-
-
+//Denna fil finns och körs endast för att jag se få se hur
+//Datum skrivs till JSON filen så jag kan bearbeta det sen
 
 
 let meetups = [

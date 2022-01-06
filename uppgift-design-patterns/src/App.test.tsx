@@ -5,11 +5,6 @@ import { MeetupsView } from './components/MeetupsView';
 
 import { shallow, mount } from 'enzyme'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
 
 describe("Testar med enzyme", () => {
   it("renders the App component", () => {
@@ -35,6 +30,27 @@ describe("Test MeetupsView", () => {
     const wrapper = mount(<MeetupsView />)
     const meetupsList = wrapper.find('li')
     expect(meetupsList.exists()).toBe(true)
+  })
+  it("shows all meetups that happened druing 2021", () => {
+    const wrapper = mount(<MeetupsView />)
+    const input = wrapper.find('[data-test="meetups-input"]').at(0)
+    input.simulate('change', {target: {value: "2021"} })
+    const nrofmeetups = wrapper.find('li').length
+    expect(nrofmeetups).toEqual(6)
+  }),
+  it("shows all meetups that happened druing 2022", () => {
+    const wrapper = mount(<MeetupsView />)
+    const input = wrapper.find('[data-test="meetups-input"]').at(0)
+    input.simulate('change', {target: {value: "2022"} })
+    const nrofmeetups = wrapper.find('li').length
+    expect(nrofmeetups).toEqual(3)
+  }),
+  it("shows all meetups that happened druing 2022", () => {
+    const wrapper = mount(<MeetupsView />)
+    const input = wrapper.find('[data-test="meetups-input"]').at(0)
+    input.simulate('change', {target: {value: "2020"} })
+    const nrofmeetups = wrapper.find('li').length
+    expect(nrofmeetups).toEqual(1)
   })
 })
 
