@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.sorted-meetups-list {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-around;*/
+  column-gap: 50px;
+  row-gap: 50px;
+  justify-content: space-between;
+  max-width: 1050px;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+.sorted-meetups-list-item {
+  max-width: 250px;
+}
+
+.sorted-meetups-list-item:hover {
+  max-width: 250px;
+  border: 1px solid white;
+  height: 75px;
+}
+
+.meetups-list {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+}
+
+ol  {
+  list-style-type: none;
+}

@@ -8,7 +8,7 @@ export const MeetupsView = () => {
     const parsedmeetupsList = JSON.parse(JSON.stringify(Meetups))
     const sortedmeetupsList = parsedmeetupsList.sort((a: { date: string; },b: { date: string; }) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0))
     return (
-        <div>
+        <div className="meetups-list">
             <ul>
                 {
                     meetupsList.map(item =>
@@ -17,10 +17,10 @@ export const MeetupsView = () => {
                 }
             </ul>
 
-            <ol>
+            <ol className="sorted-meetups-list">
                {
                    sortedmeetupsList.map((item: any) => 
-                        <li>DATE: {item.date}   NAME:  {item.name}</li>
+                        <li className="sorted-meetups-list-item">DATE: {item.date}   NAME:  {item.name}</li>
                     )
                }
             </ol>
