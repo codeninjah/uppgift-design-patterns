@@ -1,16 +1,19 @@
 import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 import React, {useState} from 'react';
 import { Meetups } from '../database.json';
-import { IMeetup } from '../models/Meetup';
+//import { IMeetup } from '../models/Meetup';
+import  MeetupItem  from './MeetupItem';
+import { Props } from '../models/Meetup';
 
 
-export const MeetupsView = () => {
+export const MeetupsView = (props: Props) => {
     const meetupsList = Meetups
     const parsedmeetupsList = JSON.parse(JSON.stringify(Meetups))
     const sortedmeetupsList = parsedmeetupsList.sort((a: { date: string; },b: { date: string; }) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0))
 
     const [inputValue, setInputValue] = useState<string>("")
     return (
+        <>
         <div>
           <div className="inputContainer">
             <label htmlFor="">Search</label>
@@ -40,8 +43,24 @@ export const MeetupsView = () => {
                         )
                 }
                 </ol>
+
+                <ol className="sorted-meetups-list-test">
+                {
+                    sortedmeetupsList.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
+                            <li className="sorted-meetups-list-item" >DATE: {item.date}   NAME:  {item.name}
+                                <article>
+                  <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
+                  <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button>
+                </article>
+                            </li>
+
+                            )
+                }
+                </ol>
+
             </div>
         </div>
+        </>
     )
 }
 
