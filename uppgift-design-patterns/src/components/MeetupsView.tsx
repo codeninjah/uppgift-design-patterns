@@ -14,9 +14,13 @@ export const MeetupsView = () => {
     const [inputValue, setInputValue] = useState<string>("")
     const goToMeetup = (id: any) => {
         const meetupinterestedby = sortedmeetupsList.find((item: any) => item.id == id)
-        console.log("Alex")
-        console.log(id)
+            if(meetupinterestedby){
+                console.log("Alex");
+                //<MeetupItem id={meetupinterestedby.id} name={meetupinterestedby.name} date={meetupinterestedby.date} comments={[]} />
+                console.log("Was here");
+            }
     }
+
     return (
         <>
         <div>
@@ -53,7 +57,7 @@ export const MeetupsView = () => {
                 {
                     sortedmeetupsList.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
                             <li>DATE: {item.date}   NAME:  {item.name}
-                                <article onClick={goToMeetup}>
+                                <article key={item.id} onClick={goToMeetup}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
                                         {/* <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button> */}
                                 </article>
