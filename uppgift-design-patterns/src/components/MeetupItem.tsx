@@ -1,4 +1,4 @@
-//import { Meetups } from '../database.json'
+import { Meetups } from '../database.json'
 import { IMeetup } from '../models/Meetup'
 
 const MeetupItem = ({id, name, date, comments}:IMeetup) => {

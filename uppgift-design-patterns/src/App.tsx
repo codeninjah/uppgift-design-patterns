@@ -3,14 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 import { MeetupsView } from '../src/components/MeetupsView'
+import  MeetupItem  from '../src/components/MeetupItem';
 import { IMeetup } from './models/Meetup';
 
 function App() {
   return (
     <div className="App">
-      <MeetupsView view={function (item: IMeetup): void {
-        throw new Error('Function not implemented.');
-      } } />
+      <MeetupsView />
     </div>
   );
 }

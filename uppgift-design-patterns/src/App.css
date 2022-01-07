@@ -75,3 +75,7 @@ ol  {
 .inputContainer {
   margin-top: 25px;
 }
+
+article {
+  border: 1px solid black;
+}
