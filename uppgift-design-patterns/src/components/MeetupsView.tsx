@@ -12,6 +12,7 @@ export const MeetupsView = () => {
     const sortedmeetupsList = parsedmeetupsList.sort((a: { date: string; },b: { date: string; }) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0))
 
     const [inputValue, setInputValue] = useState<string>("")
+    //Följande funktion gör typ inget just nu
     const goToMeetup = (id: any) => {
         const meetupinterestedby = sortedmeetupsList.find((item: any) => item.id == id)
             if(meetupinterestedby){
@@ -20,6 +21,16 @@ export const MeetupsView = () => {
                 console.log("Was here");
             }
     }
+
+    //Denna funktion skall jämföra dagens datum med datumen för meetups'en
+    const dateCompare = () => {
+        const todaysDate = new Date().toISOString().split('T')[0]
+        const todaysDateYear = todaysDate.split("-")[0]
+        const todaysDateMonth = todaysDate.split("-")[1]
+        const todaysDateDay = todaysDate.split("-")[2]
+    }
+
+    dateCompare()
 
     return (
         <>
