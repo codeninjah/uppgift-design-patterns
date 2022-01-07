@@ -23,14 +23,21 @@ export const MeetupsView = () => {
     }
 
     //Denna funktion skall jämföra dagens datum med datumen för meetups'en
-    const dateCompare = () => {
+    //Borde skriva tester innan jag fortsätter bygga ut den
+    const dateCompare = (eventDate: any) => {
         const todaysDate = new Date().toISOString().split('T')[0]
         const todaysDateYear = todaysDate.split("-")[0]
         const todaysDateMonth = todaysDate.split("-")[1]
         const todaysDateDay = todaysDate.split("-")[2]
+
+        const testDate = eventDate.split('T')[0]
+        const testDateYear = testDate.split("-")[0]
+        const testDateMonth = testDate.split("-")[1]
+        const testDateDay = testDate.split("-")[2]
+        console.log(testDateDay)
     }
 
-    dateCompare()
+    dateCompare("2020-10-10")
 
     return (
         <>
