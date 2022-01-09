@@ -6,7 +6,16 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
         <>
             <h1>{name}</h1>
             <p>{date}</p>
-            <p>COMMENTS: {comments}</p>
+            <div className="hidden">
+                <p>COMMENTS: {comments}</p>
+                <ul>
+                    {
+                        comments.map(item => 
+                        <li key={item}>{item}</li>)
+                    }
+                </ul>
+                <p><button>Register</button></p>
+            </div>
         </>
     )
 }
