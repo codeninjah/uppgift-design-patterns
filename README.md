@@ -17,9 +17,6 @@ En Meetup är en sammankomst för personer med ett gemensamt intresse. Det kan h
 - Som en besökare vill jag att passerade meetups ska markeras tydligt, så att jag inte försöker anmäla mig till något som redan har varit.<br/>
   DOD: Passerade meetups ska ha någon form av styling så att det är tydligt att de passerat<br/>
   
-- Som en besökare vill jag kunna rejta evenemang jag har varit på med skalan 1-5, för att ge feedback till arrangören och andra besökare<br/>
-  DOD: Ev en stjärn system, betyg lagras i localStorage ?</br>
-  
 - Som besökare vill jag kunna diskutera evenemang därför att vi kan komma med konstruktiv kritik.<br/>
   DOD: Kommentarer ska lagras. localStorage? JSON?<br/>
 
