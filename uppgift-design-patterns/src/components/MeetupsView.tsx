@@ -18,6 +18,8 @@ export const MeetupsView = () => {
             if(meetupinterestedby){
                 console.log("Alex");
                 //<MeetupItem id={meetupinterestedby.id} name={meetupinterestedby.name} date={meetupinterestedby.date} comments={[]} />
+                console.log(id)
+                console.log(meetupinterestedby)
                 console.log("Was here");
             }
     }
@@ -75,7 +77,7 @@ export const MeetupsView = () => {
                 {
                     sortedmeetupsList.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
                             <li>DATE: {item.date}   NAME:  {item.name}
-                                <article key={item.id} onClick={goToMeetup}>
+                                <article key={item.id} onClick={() => goToMeetup(item.id)}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
                                         {/* <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button> */}
                                 </article>
