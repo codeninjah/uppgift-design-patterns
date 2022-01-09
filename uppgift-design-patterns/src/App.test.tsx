@@ -44,7 +44,7 @@ describe("Test MeetupsView", () => {
     const nrofmeetups = wrapper.find('li').length
     expect(nrofmeetups).toEqual(3)
   }),
-  it("shows all meetups that happened druing 2022", () => {
+  it("shows all meetups that happen during 2022", () => {
     const wrapper = mount(<MeetupsView />)
     const input = wrapper.find('[data-test="meetups-input"]').at(0)
     input.simulate('change', {target: {value: "2020"} })

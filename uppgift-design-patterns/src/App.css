@@ -85,3 +85,10 @@ article {
   display: none;
 }
 */
+
+.kommentar {
+  font-size: 15px;
+  font-family: Arial;
+  text-align: right;
+  margin-right: 20px;
+}

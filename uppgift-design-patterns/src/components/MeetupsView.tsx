@@ -37,6 +37,8 @@ export const MeetupsView = () => {
         const testDateMonth = testDate.split("-")[1]
         const testDateDay = testDate.split("-")[2]
         console.log(testDateDay)
+
+        
     }
 
     dateCompare("2020-10-10")
