@@ -14,22 +14,25 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
         commentary();
     }
 
+    const ShareComment = () => {
+        
+    }
+
     return(
         <>
             <h1>{name}</h1>
             <p>{date}</p>
-            <div className="hidden">
-                <p>COMMENTS: {comments.length}</p>
-
-                { showCommentary ? <><button>Share</button><input type="text" placeholder="Your comment here"></input></> : <></> }
+            <div>
                 { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
-                
+                <p>COMMENTS: {comments.length}</p>
                 <ul className="kommentarer">
                     {
                         comments.map(item => 
                         <li className="kommentar" key={item}>{item}</li>)
                     }
                 </ul>
+                        { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={ShareComment}>Share</button>
+                        <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }
             </div>
         </>
     );

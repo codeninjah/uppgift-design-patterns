@@ -54,10 +54,11 @@ describe("Test MeetupsView", () => {
   }),
   it("something happens when clicking the register button", () => {
     const wrapper = mount(<MeetupItem id={'0123456789'} name={'CryptoTalks'} date={"2022-01-26"} comments={[]} />)
-    const registerBtn = wrapper.find('[data-test="meetups-input"]').at(0)
+    const registerBtn = wrapper.find('[data-test="meetups-input"]')
     registerBtn.simulate('click')
-
-    const mainWrapper = mount(<MeetupsView />) 
+    const commentsBtn = wrapper.find('[data-test="meetups-comment-btn"]')
+    expect(commentsBtn.exists()).toBe(true)
+    //register btn försvinner och kommentarsfältet syns
   }),
 
   it("it compares the event's day with today's date", () => {

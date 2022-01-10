@@ -80,14 +80,9 @@ article {
   border: 1px solid black;
 }
 
-/*
-.hidden {
-  display: none;
-}
-*/
-
 .kommentarer {
   margin-bottom: 20px;
+  list-style-type: none;
 }
 
 .kommentar {
@@ -108,4 +103,8 @@ article {
 
 .red {
   background-color: red;
+}
+
+.member-comment {
+  margin-bottom: 15px;
 }
