@@ -6,7 +6,7 @@ En Meetup är en sammankomst för personer med ett gemensamt intresse. Det kan h
 - Som användare vill jag ha se alla meetups när jag går in på sidan, därför att jag kan vill veta mer om vad som pågått och pågår.<br/>
   DOD: en lista över alla meetups
   
-- Som en besökare vill jag se meetups som inträffar snart först, därför att de är mest intressanta för mig.<br/>
+- Som en besökare vill jag se meetups som inträffar från längst fram i tiden till längst back i tiden, därför att de är mest intressanta för mig.<br/>
   DOD: Sorterade efter datum; den längst framåt i tiden först, längst bakåt i tiden sist
   
 - Som användare vill jag ha möjligheten att anmäla mig till kommande meetups därför att jag vill delta på de som för mig är relevanta.<br/>
