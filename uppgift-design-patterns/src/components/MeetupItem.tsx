@@ -1,20 +1,29 @@
+import { render } from 'enzyme'
 import { Meetups } from '../database.json'
 import { IMeetup } from '../models/Meetup'
+import { useState } from 'react'
 
 const MeetupItem = ({id, name, date, comments}:IMeetup) => {
+    let isRegistered = null;
     const register = () => {
         console.log("Trying to register")
+        isRegistered = true;
     }
-    
+
     return(
         <>
             <h1>{name}</h1>
             <p>{date}</p>
             <div className="hidden">
                 <p>COMMENTS: {comments.length}</p>
-                <button onClick={register} data-test="meetups-input">Share</button>
+                <button>Share</button>
                 <input type="text" placeholder="Your comment here"></input>
-                <p><button>Register</button></p>
+
+                    {
+                        isRegistered ? <></>  : <button onClick={register} data-test="meetups-input">Register</button>
+                        
+                    }
+                
                 <ul className="kommentarer">
                     {
                         comments.map(item => 
@@ -23,7 +32,9 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
                 </ul>
             </div>
         </>
-    )
+    );
 }
+
+
 
 export default MeetupItem
