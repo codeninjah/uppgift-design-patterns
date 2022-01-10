@@ -4,11 +4,9 @@ import { IMeetup } from '../models/Meetup'
 import { useState } from 'react'
 
 const MeetupItem = ({id, name, date, comments}:IMeetup) => {
-    let isRegistered = null;
-    const register = () => {
-        console.log("Trying to register")
-        isRegistered = true;
-    }
+    let [showButton, setShowButton]  = useState(true);
+    const register = () => setShowButton(false);
+    
 
     return(
         <>
@@ -18,11 +16,8 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
                 <p>COMMENTS: {comments.length}</p>
                 <button>Share</button>
                 <input type="text" placeholder="Your comment here"></input>
-
-                    {
-                        isRegistered ? <></>  : <button onClick={register} data-test="meetups-input">Register</button>
-                        
-                    }
+                
+                { showButton ? <button onClick={register} data-test="meetups-input">Register</button> : <></> }
                 
                 <ul className="kommentarer">
                     {
