@@ -5,8 +5,14 @@ import { useState } from 'react'
 
 const MeetupItem = ({id, name, date, comments}:IMeetup) => {
     let [showButton, setShowButton]  = useState(true);
-    const register = () => setShowButton(false);
-    
+    let [showCommentary, setShowCommentary] = useState(false)
+
+    const registerBtnStuff = () => {
+        const register = () => setShowButton(false);
+        const commentary = () => setShowCommentary(true)
+        register();
+        commentary();
+    }
 
     return(
         <>
@@ -14,10 +20,9 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
             <p>{date}</p>
             <div className="hidden">
                 <p>COMMENTS: {comments.length}</p>
-                <button>Share</button>
-                <input type="text" placeholder="Your comment here"></input>
-                
-                { showButton ? <button onClick={register} data-test="meetups-input">Register</button> : <></> }
+
+                { showCommentary ? <><button>Share</button><input type="text" placeholder="Your comment here"></input></> : <></> }
+                { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
                 
                 <ul className="kommentarer">
                     {
