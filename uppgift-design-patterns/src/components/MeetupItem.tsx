@@ -7,6 +7,9 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
     let [showButton, setShowButton]  = useState(true);
     let [showCommentary, setShowCommentary] = useState(false)
 
+    const meetupsList = JSON.parse(JSON.stringify(Meetups))
+    let [showComments, setShowComments] = useState(meetupsList)
+
     const registerBtnStuff = () => {
         const register = () => setShowButton(false);
         const commentary = () => setShowCommentary(true)
@@ -16,6 +19,17 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
 
     const ShareComment = () => {
         console.log("Testing test")
+        console.log("This is the meetupslist")
+        console.log(meetupsList) //Skriver ut hela arrayen
+        console.log(meetupsList.find((el: { id: string }) => el.id == id))
+        console.log("Was it one or more?") //YES
+        const righmeetup = meetupsList.find((el: { id: string }) => el.id == id)
+        var i = meetupsList.indexOf(righmeetup)
+        console.log(righmeetup)
+        console.log("This is it!")
+        //righmeetup.comments.push("Test")
+        setShowComments(showComments[i].push("TESTETSTSTETETSTSST"))
+        
     }
 
     return(
