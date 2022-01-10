@@ -38,7 +38,7 @@ export const MeetupsView = () => {
         const testDateDay = testDate.split("-")[2]
         console.log(testDateDay)
 
-        
+
     }
 
     dateCompare("2020-10-10")
@@ -67,13 +67,13 @@ export const MeetupsView = () => {
                     }
                 </ul> */}
 
-                <ol className="sorted-meetups-list">
+                {/* <ol className="sorted-meetups-list">
                 {
                     sortedmeetupsList.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
                             <li className="sorted-meetups-list-item">DATE: {item.date}   NAME:  {item.name}</li>
                         )
                 }
-                </ol>
+                </ol> */}
 
                 <ol className="sorted-meetups-list-test">
                 {

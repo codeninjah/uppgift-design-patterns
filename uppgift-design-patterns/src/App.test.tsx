@@ -41,7 +41,7 @@ describe("Test MeetupsView", () => {
     const wrapper = mount(<MeetupsView />)
     const input = wrapper.find('[data-test="meetups-input"]').at(0)
     input.simulate('change', {target: {value: "2022"} })
-    const nrofmeetups = wrapper.find('li').length
+    const nrofmeetups = wrapper.find('h1').length
     expect(nrofmeetups).toEqual(3)
   }),
   it("shows all meetups that happen during 2022", () => {
@@ -51,5 +51,12 @@ describe("Test MeetupsView", () => {
     const nrofmeetups = wrapper.find('li').length
     expect(nrofmeetups).toEqual(1)
   })
+
+  /*
+  it("outputs right info when clicking on a meetup", () => {
+    const wrapper = mount(<MeetupsView />)
+    const meetup = wrapper.find("")
+  })*/
+
 })
 
