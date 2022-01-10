@@ -92,3 +92,16 @@ article {
   text-align: right;
   margin-right: 20px;
 }
+
+/*These will later be used to mark upcoming, ongoing and passed events */
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}

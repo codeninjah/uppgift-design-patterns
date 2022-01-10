@@ -2,7 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import { MeetupsView } from './components/MeetupsView';
-import { shallow, mount } from 'enzyme'
+import { shallow, mount } from 'enzyme';
+import MeetupItem from './components/MeetupItem';
 
 
 describe("Testar med enzyme", () => {
@@ -50,6 +51,19 @@ describe("Test MeetupsView", () => {
     input.simulate('change', {target: {value: "2020"} })
     const nrofmeetups = wrapper.find('li').length
     expect(nrofmeetups).toEqual(1)
+  }),
+  it("something happens when clicking the register button", () => {
+    const wrapper = mount(<MeetupItem id={'0123456789'} name={'CryptoTalks'} date={"2022-01-26"} comments={[]} />)
+    const registerBtn = wrapper.find('[data-test="meetups-input"]').at(0)
+    registerBtn.simulate('click')
+    
+    const mainWrapper = mount(<MeetupsView />) 
+  }),
+
+  it("it compares the event's day with today's date", () => {
+    const wrapper = mount(<MeetupsView />)
+
+
   })
 
   /*
