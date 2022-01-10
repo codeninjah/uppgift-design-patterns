@@ -15,7 +15,7 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
     }
 
     const ShareComment = () => {
-        
+        console.log("Testing test")
     }
 
     return(
