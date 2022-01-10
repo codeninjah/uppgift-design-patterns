@@ -3,6 +3,8 @@ import { Meetups } from '../database.json'
 import { IMeetup } from '../models/Meetup'
 import { useState } from 'react'
 
+const fs = require('fs');
+
 const MeetupItem = ({id, name, date, comments}:IMeetup) => {
     let [showButton, setShowButton]  = useState(true);
     let [showCommentary, setShowCommentary] = useState(false)
@@ -28,7 +30,9 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
         console.log(righmeetup)
         console.log("This is it!")
         //righmeetup.comments.push("Test")
-        setShowComments(showComments[i].push("TESTETSTSTETETSTSST"))
+        meetupsList[i].comments.push("TESTSTSTSTSSTSTS")
+
+        fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
         
     }
 
