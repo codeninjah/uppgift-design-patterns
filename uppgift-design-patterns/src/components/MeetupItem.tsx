@@ -12,15 +12,15 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
             <p>{date}</p>
             <div className="hidden">
                 <p>COMMENTS: {comments.length}</p>
-                <ul>
+                <button onClick={register} data-test="meetups-input">Share</button>
+                <input type="text" placeholder="Your comment here"></input>
+                <p><button>Register</button></p>
+                <ul className="kommentarer">
                     {
                         comments.map(item => 
                         <li className="kommentar" key={item}>{item}</li>)
                     }
                 </ul>
-                <button onClick={register} data-test="meetups-input">Share</button>
-                <input type="text" placeholder="Your comment here"></input>
-                <p><button>Register</button></p>
             </div>
         </>
     )

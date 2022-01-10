@@ -35,7 +35,7 @@ describe("Test MeetupsView", () => {
     const wrapper = mount(<MeetupsView />)
     const input = wrapper.find('[data-test="meetups-input"]').at(0)
     input.simulate('change', {target: {value: "2021"} })
-    const nrofmeetups = wrapper.find('li').length
+    const nrofmeetups = wrapper.find('h1').length
     expect(nrofmeetups).toEqual(6)
   }),
   it("shows all meetups that happened druing 2022", () => {
@@ -45,18 +45,18 @@ describe("Test MeetupsView", () => {
     const nrofmeetups = wrapper.find('h1').length
     expect(nrofmeetups).toEqual(3)
   }),
-  it("shows all meetups that happen during 2022", () => {
+  it("shows all meetups that happen during 2020", () => {
     const wrapper = mount(<MeetupsView />)
     const input = wrapper.find('[data-test="meetups-input"]').at(0)
     input.simulate('change', {target: {value: "2020"} })
-    const nrofmeetups = wrapper.find('li').length
+    const nrofmeetups = wrapper.find('h1').length
     expect(nrofmeetups).toEqual(1)
   }),
   it("something happens when clicking the register button", () => {
     const wrapper = mount(<MeetupItem id={'0123456789'} name={'CryptoTalks'} date={"2022-01-26"} comments={[]} />)
     const registerBtn = wrapper.find('[data-test="meetups-input"]').at(0)
     registerBtn.simulate('click')
-    
+
     const mainWrapper = mount(<MeetupsView />) 
   }),
 
