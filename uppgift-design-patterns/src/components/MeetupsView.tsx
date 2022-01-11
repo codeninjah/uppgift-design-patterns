@@ -34,7 +34,6 @@ export const MeetupsView = () => {
 
         //Ny array och kopiera över den gamla
         console.log("Är detta nya arrayen?")
-
         
         let newCommentsList = showComments.map((meetup: any) =>{
             if(meetup.id === id) {
@@ -45,19 +44,6 @@ export const MeetupsView = () => {
                 return meetup
             }
         })
-        
-
-
-        //let newMeetup = newCommentsList.find((element: any) => element.id == id)
-        //newMeetup = "TESTTESTssss"
-
-        //let newMeetUpList = [...newMeetup]
-        //let newMeetUpList = newMeetup.map()
-        //const alex = "Alex"
-        //newMeetup.concat(alex)
-        //showComments = [...newMeetup]
-        //showComments = [...newCommentsList]
-        //showComments.splice(0, 10) 
 
         setShowComments(newCommentsList)              
     }
@@ -68,7 +54,6 @@ export const MeetupsView = () => {
         const meetupinterestedby = sortedmeetupsList.find((item: any) => item.id == id)
             if(meetupinterestedby){
                 console.log("Alex");
-                //<MeetupItem id={meetupinterestedby.id} name={meetupinterestedby.name} date={meetupinterestedby.date} comments={[]} />
                 console.log(id)
                 console.log(meetupinterestedby)
                 console.log("Was here");
@@ -134,9 +119,11 @@ export const MeetupsView = () => {
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
                                        
                             {/* Följande har bortkommenterats för att få applikationen att köra igång */}
-                            {/* { <ul className="kommentarer">
-                                    { showComments ? newCommentsList.map((item:any) => <li className="kommentar" key={item}>{item}</li>) : <></> }                                   
-                            </ul> } */}
+                             {/* <ul className="kommentarer">
+                                {
+                                    showComments.map((item:any) => <li className="kommentar" key={item}>{item}</li>)                                   
+                                }
+                            </ul>  */}
 
                                 { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={() => ShareComment(item.id)}>Share</button>
                                 <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }

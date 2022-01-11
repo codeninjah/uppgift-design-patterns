@@ -17,7 +17,7 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
                 
                 <ul>
                     {
-                        <li>{comments}</li>
+                        comments.map(item => <li>{item}</li>) 
                     }
                 </ul>
 
