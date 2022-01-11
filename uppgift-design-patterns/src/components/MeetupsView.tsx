@@ -26,7 +26,7 @@ export const MeetupsView = () => {
         commentary();
     }
 
-    const ShareComment = () => {
+    const ShareComment = (id:any) => {
         console.log("Testing test")
         console.log("This is the meetupslist")
         console.log(showComments) //Skriver ut hela arrayen
@@ -39,14 +39,17 @@ export const MeetupsView = () => {
         //righmeetup.comments.push("Test")
         //meetupsList[i].comments.push("CODENINJAH")
 
+
         //Ny array och kopiera över den gamla
-        let newCommentsList = [...showComments]
-        let newMeetup = rightmeetup
+        console.log("Är detta nya arrayen?")
+        let newCommentsList = [...showComments, showComments]
+        let newMeetup = newCommentsList.find(element => element.id == id)
+        //const alex = "Alex"
+        //newMeetup.concat(alex)
+        showComments = [...newMeetup, newMeetup]
+        console.log("This is showComments: " + showComments)
+
         
-        
-
-
-
         //setShowComments()
         //fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
         
@@ -131,7 +134,7 @@ export const MeetupsView = () => {
                                      }
                             </ul> */}
 
-                                { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={ShareComment}>Share</button>
+                                { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={() => ShareComment(item.id)}>Share</button>
                                 <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }
                                 </article>
                             </li>
