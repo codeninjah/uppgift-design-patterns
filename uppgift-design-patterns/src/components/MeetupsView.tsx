@@ -119,10 +119,11 @@ export const MeetupsView = () => {
                                         {/* <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button> */}
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
                                        
-                            <ul className="kommentarer">
-                                    { showComments ? sortedmeetupsList.map((item:any) => <li className="kommentar" key={item}>{item}</li>) : <></>
+                            {/* Följande har bortkommenterats för att få applikationen att köra igång */}
+                            {/* <ul className="kommentarer">
+                                    { showComments ? .map((item:any) => <li className="kommentar" key={item}>{item}</li>) : <></>
                                      }
-                            </ul>
+                            </ul> */}
 
                                 { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={ShareComment}>Share</button>
                                 <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }
