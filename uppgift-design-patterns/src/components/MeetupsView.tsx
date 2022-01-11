@@ -38,19 +38,16 @@ export const MeetupsView = () => {
         let newCommentsList = showComments.map((meetup: any) =>{
             if(meetup.id === id) {
                 meetup.comments.push("CODENINJAH")
-                return meetup 
+                return meetup
             }
             else{
                 return meetup
             }
         })
 
-            setShowComments(newCommentsList)           
+            setShowComments(newCommentsList)         
     }
 
-    useEffect(() => {
-        setShowComments(showComments)
-    })
 
     const [inputValue, setInputValue] = useState<string>("")
     //Följande funktion gör typ inget just nu
@@ -110,7 +107,7 @@ export const MeetupsView = () => {
                     sortedmeetupsList.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
                             <li>
                                 <article key={item.id} onClick={() => goToMeetup(item.id)}>
-                                    <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
+                                    <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments} />
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
                                        
                             {/* Följande har bortkommenterats för att få applikationen att köra igång */}
