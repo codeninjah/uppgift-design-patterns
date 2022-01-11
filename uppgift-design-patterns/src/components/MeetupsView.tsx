@@ -32,17 +32,22 @@ export const MeetupsView = () => {
         console.log(showComments) //Skriver ut hela arrayen
         console.log(showComments.find((el: { id: string }) => el.id == "Alex"))
         console.log("Was it one or more?") //YES
-        const righmeetup = showComments.find((el: { id: string }) => el.id == "Alex")
-        var i = showComments.indexOf(righmeetup)
-        console.log(righmeetup)
+        const rightmeetup = showComments.find((el: { id: string }) => el.id == "Alex")
+        var i = showComments.indexOf(rightmeetup)
+        console.log(rightmeetup)
         console.log("This is it!")
         //righmeetup.comments.push("Test")
         //meetupsList[i].comments.push("CODENINJAH")
 
-        //let newCommentsList = 
+        //Ny array och kopiera över den gamla
+        let newCommentsList = [...showComments]
+        let newMeetup = rightmeetup
+        
+        
+
+
 
         //setShowComments()
-
         //fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
         
     }
@@ -117,6 +122,7 @@ export const MeetupsView = () => {
                                 <article key={item.id} onClick={() => goToMeetup(item.id)}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
                                         {/* <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button> */}
+
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
                                        
                             {/* Följande har bortkommenterats för att få applikationen att köra igång */}
