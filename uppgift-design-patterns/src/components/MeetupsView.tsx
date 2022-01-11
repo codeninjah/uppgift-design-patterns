@@ -11,6 +11,42 @@ export const MeetupsView = () => {
     const parsedmeetupsList = JSON.parse(JSON.stringify(Meetups))
     const sortedmeetupsList = parsedmeetupsList.sort((a: { date: string; },b: { date: string; }) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0))
 
+
+    let [showButton, setShowButton]  = useState(true);
+    let [showCommentary, setShowCommentary] = useState(false)
+
+    const meetupsListJSON = JSON.parse(JSON.stringify(Meetups))
+    let [showComments, setShowComments] = useState(meetupsListJSON)
+    
+
+    const registerBtnStuff = () => {
+        const register = () => setShowButton(false);
+        const commentary = () => setShowCommentary(true)
+        register();
+        commentary();
+    }
+
+    const ShareComment = () => {
+        console.log("Testing test")
+        console.log("This is the meetupslist")
+        console.log(showComments) //Skriver ut hela arrayen
+        console.log(showComments.find((el: { id: string }) => el.id == "Alex"))
+        console.log("Was it one or more?") //YES
+        const righmeetup = showComments.find((el: { id: string }) => el.id == "Alex")
+        var i = showComments.indexOf(righmeetup)
+        console.log(righmeetup)
+        console.log("This is it!")
+        //righmeetup.comments.push("Test")
+        //meetupsList[i].comments.push("CODENINJAH")
+
+        //let newCommentsList = 
+
+        //setShowComments()
+
+        //fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
+        
+    }
+
     const [inputValue, setInputValue] = useState<string>("")
     //Följande funktion gör typ inget just nu
     const goToMeetup = (id: any) => {
@@ -38,8 +74,6 @@ export const MeetupsView = () => {
         const testDateMonth = testDate.split("-")[1]
         const testDateDay = testDate.split("-")[2]
         console.log(testDateDay)
-
-
     }
 
     dateCompare("2020-10-10")
@@ -83,6 +117,15 @@ export const MeetupsView = () => {
                                 <article key={item.id} onClick={() => goToMeetup(item.id)}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
                                         {/* <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button> */}
+                                        { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
+                                       
+                            <ul className="kommentarer">
+                                    { showComments ? sortedmeetupsList.map((item:any) => <li className="kommentar" key={item}>{item}</li>) : <></>
+                                     }
+                            </ul>
+
+                                { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={ShareComment}>Share</button>
+                                <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }
                                 </article>
                             </li>
 
