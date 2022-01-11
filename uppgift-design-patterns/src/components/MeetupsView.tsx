@@ -1,5 +1,5 @@
 import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Meetups } from '../database.json';
 //import { IMeetup } from '../models/Meetup';
 import  MeetupItem  from './MeetupItem';
@@ -18,8 +18,6 @@ export const MeetupsView = () => {
     const meetupsListJSON = JSON.parse(JSON.stringify(Meetups))
     let [showComments, setShowComments] = useState(meetupsListJSON)
 
-    //let newCommentsList : any
-    
 
     const registerBtnStuff = () => {
         const register = () => setShowButton(false);
@@ -32,30 +30,26 @@ export const MeetupsView = () => {
         console.log("Testing test")
         console.log("This is the meetupslist")
         console.log(showComments) //Skriver ut hela arrayen
-        //console.log(showComments.find((el: { id: string }) => el.id == id))
         console.log("Was it one or more?") //YES
-        const rightmeetup = showComments.find((el: { id: string }) => el.id == id)
-        var i = showComments.indexOf(rightmeetup)
-        console.log(rightmeetup)
-        console.log("This is it!")
-        //righmeetup.comments.push("Test")
-        //meetupsList[i].comments.push("CODENINJAH")
-
 
         //Ny array och kopiera över den gamla
         console.log("Är detta nya arrayen?")
 
+        
         let newCommentsList = showComments.map((meetup: any) =>{
             if(meetup.id === id) {
-                return meetup
+                meetup.comments.push("CODENINJAH")
+                return meetup 
             }
             else{
-                return false
+                return meetup
             }
         })
+        
 
-        let newMeetup = newCommentsList.find((element: any) => element.id == id)
-        newMeetup = "TESTTESTssss"
+
+        //let newMeetup = newCommentsList.find((element: any) => element.id == id)
+        //newMeetup = "TESTTESTssss"
 
         //let newMeetUpList = [...newMeetup]
         //let newMeetUpList = newMeetup.map()
@@ -65,10 +59,7 @@ export const MeetupsView = () => {
         //showComments = [...newCommentsList]
         //showComments.splice(0, 10) 
 
-        setShowComments((showComments: any) => [...newCommentsList])
-        console.log("This is showComments: " + showComments.name)
-
-                
+        setShowComments(newCommentsList)              
     }
 
     const [inputValue, setInputValue] = useState<string>("")
