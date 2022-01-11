@@ -30,9 +30,9 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
         console.log(righmeetup)
         console.log("This is it!")
         //righmeetup.comments.push("Test")
-        meetupsList[i].comments.push("TESTSTSTSTSSTSTS")
+        meetupsList[i].comments.push("CODENINJAH")
 
-        fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
+        //fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
         
     }
 
