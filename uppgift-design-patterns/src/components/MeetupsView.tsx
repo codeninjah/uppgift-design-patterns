@@ -45,8 +45,12 @@ export const MeetupsView = () => {
             }
         })
 
-        setShowComments(newCommentsList)              
+            setShowComments(newCommentsList)           
     }
+
+    useEffect(() => {
+        setShowComments(showComments)
+    })
 
     const [inputValue, setInputValue] = useState<string>("")
     //Följande funktion gör typ inget just nu
@@ -57,7 +61,6 @@ export const MeetupsView = () => {
                 console.log(id)
                 console.log(meetupinterestedby)
                 console.log("Was here");
-
             }
     }
 
@@ -93,14 +96,6 @@ export const MeetupsView = () => {
           />
         </div>
             <div className="meetups-list">
-            
-                {/* <ul>
-                    {
-                        meetupsList.map(item =>
-                            <li key={item.date}> Datum: {item.date} Namn: {item.name}</li>  
-                        )
-                    }
-                </ul> */}
 
                 {/* <ol className="sorted-meetups-list">
                 {
