@@ -44,11 +44,13 @@ export const MeetupsView = () => {
         console.log("Är detta nya arrayen?")
         let newCommentsList = [...showComments]
         let newMeetup = newCommentsList.find(element => element.id == id)
+        newMeetup.comments = "TESTTESTTEST"
         //const alex = "Alex"
         //newMeetup.concat(alex)
         //showComments = [...newMeetup]
+        showComments.concat(newCommentsList)
 
-        setShowComments((showComments: any) => [...showComments, newMeetup])
+        //setShowComments((showComments: any) => [...showComments, newCommentsList])
         console.log("This is showComments: " + showComments.name)
 
                 
