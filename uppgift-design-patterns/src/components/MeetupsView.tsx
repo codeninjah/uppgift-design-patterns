@@ -30,9 +30,9 @@ export const MeetupsView = () => {
         console.log("Testing test")
         console.log("This is the meetupslist")
         console.log(showComments) //Skriver ut hela arrayen
-        console.log(showComments.find((el: { id: string }) => el.id == "Alex"))
+        console.log(showComments.find((el: { id: string }) => el.id == id))
         console.log("Was it one or more?") //YES
-        const rightmeetup = showComments.find((el: { id: string }) => el.id == "Alex")
+        const rightmeetup = showComments.find((el: { id: string }) => el.id == id)
         var i = showComments.indexOf(rightmeetup)
         console.log(rightmeetup)
         console.log("This is it!")
@@ -42,17 +42,16 @@ export const MeetupsView = () => {
 
         //Ny array och kopiera över den gamla
         console.log("Är detta nya arrayen?")
-        let newCommentsList = [...showComments, showComments]
+        let newCommentsList = [...showComments]
         let newMeetup = newCommentsList.find(element => element.id == id)
         //const alex = "Alex"
         //newMeetup.concat(alex)
-        showComments = [...newMeetup, newMeetup]
-        console.log("This is showComments: " + showComments)
+        //showComments = [...newMeetup]
 
-        
-        //setShowComments()
-        //fs.writeFileSync("../src/database.json", JSON.stringify(meetupsList[i].comments.push("TESTSTSTSTSSTSTS")))
-        
+        setShowComments((showComments: any) => [...showComments, newMeetup])
+        console.log("This is showComments: " + showComments.name)
+
+                
     }
 
     const [inputValue, setInputValue] = useState<string>("")
