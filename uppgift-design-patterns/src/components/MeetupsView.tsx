@@ -7,7 +7,7 @@ import { Props } from '../models/Meetup';
 
 
 export const MeetupsView = () => {
-    const meetupsList = Meetups
+    //const meetupsList = Meetups
     const parsedmeetupsList = JSON.parse(JSON.stringify(Meetups))
     const sortedmeetupsList = parsedmeetupsList.sort((a: { date: string; },b: { date: string; }) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0))
 
@@ -17,6 +17,8 @@ export const MeetupsView = () => {
 
     const meetupsListJSON = JSON.parse(JSON.stringify(Meetups))
     let [showComments, setShowComments] = useState(meetupsListJSON)
+
+    //let newCommentsList : any
     
 
     const registerBtnStuff = () => {
@@ -30,7 +32,7 @@ export const MeetupsView = () => {
         console.log("Testing test")
         console.log("This is the meetupslist")
         console.log(showComments) //Skriver ut hela arrayen
-        console.log(showComments.find((el: { id: string }) => el.id == id))
+        //console.log(showComments.find((el: { id: string }) => el.id == id))
         console.log("Was it one or more?") //YES
         const rightmeetup = showComments.find((el: { id: string }) => el.id == id)
         var i = showComments.indexOf(rightmeetup)
@@ -42,9 +44,21 @@ export const MeetupsView = () => {
 
         //Ny array och kopiera över den gamla
         console.log("Är detta nya arrayen?")
-        let newCommentsList = [...showComments]
-        let newMeetup = newCommentsList.find(element => element.id == id)
-        newMeetup.comments = "TESTTESTssss"
+
+        let newCommentsList = showComments.map((meetup: any) =>{
+            if(meetup.id === id) {
+                return meetup
+            }
+            else{
+                return false
+            }
+        })
+
+        let newMeetup = newCommentsList.find((element: any) => element.id == id)
+        newMeetup = "TESTTESTssss"
+
+        //let newMeetUpList = [...newMeetup]
+        //let newMeetUpList = newMeetup.map()
         //const alex = "Alex"
         //newMeetup.concat(alex)
         //showComments = [...newMeetup]
@@ -126,22 +140,19 @@ export const MeetupsView = () => {
                             <li>
                                 <article key={item.id} onClick={() => goToMeetup(item.id)}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments}/>
-                                        {/* <button className="button" data-test="meetup-item-button" onClick={() => props.view(item)}>View Meetup</button> */}
-
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
                                        
                             {/* Följande har bortkommenterats för att få applikationen att köra igång */}
-                            {/* <ul className="kommentarer">
-                                    { showComments ? .map((item:any) => <li className="kommentar" key={item}>{item}</li>) : <></>
-                                     }
-                            </ul> */}
+                            {/* { <ul className="kommentarer">
+                                    { showComments ? newCommentsList.map((item:any) => <li className="kommentar" key={item}>{item}</li>) : <></> }                                   
+                            </ul> } */}
 
                                 { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={() => ShareComment(item.id)}>Share</button>
                                 <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }
                                 </article>
                             </li>
-
-                            )
+                            
+                        )
                 }
                 </ol>
 
