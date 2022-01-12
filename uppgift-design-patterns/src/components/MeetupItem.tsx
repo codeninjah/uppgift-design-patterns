@@ -6,6 +6,14 @@ import { useState } from 'react'
 
 const MeetupItem = ({id, name, date, comments}:IMeetup) => {
     let a = localStorage.getItem("comments")
+    let b
+    if(a){
+        b = JSON.parse(a)
+        comments = b.comments
+    }
+    else{
+        comments = comments
+    }
 
         return(
             <>
@@ -16,8 +24,9 @@ const MeetupItem = ({id, name, date, comments}:IMeetup) => {
                     <p>COMMENTS: </p>
 
                     <ul>
-                        {                            
-                            comments.map(a => <li>{a}</li>) 
+                        {    
+                            comments.length != 0 ?                         
+                            comments.map(comments => <li>{comments}</li>) : <></>
                         }
                     </ul> 
 
