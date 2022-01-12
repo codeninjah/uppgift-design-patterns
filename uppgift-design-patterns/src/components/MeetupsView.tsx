@@ -53,7 +53,7 @@ export const MeetupsView = () => {
         </div>
             <div className="meetups-list">
 
-                <ol className="sorted-meetups-list-test">
+                <ol className="sorted-meetups-list">
                 {
                     meetups.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
                             <li>

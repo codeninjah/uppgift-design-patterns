@@ -13,17 +13,24 @@ type props = {
 const MeetupItem = ({id, name, date, comments, addComment}:props) => {
     let [showButton, setShowButton]  = useState(true);
     let [showCommentary, setShowCommentary] = useState(false)
+    let [showDetails, setShowDetails] = useState(false)
     let [showComments, setShowComments] = useState(comments)
     let [inputComment, setInputComment] = useState('')
 
     const attendBtnStuff = () => {
         setShowButton(false);
         setShowCommentary(true)
+        setShowDetails(true)
     }
             
         return(
             <>
                 <h1>{name}</h1>
+                
+                { showDetails ? <div><h3>Welcome to our event!</h3>
+                <p>We hope you enjoy it, we cannot wait for you to experience it and please do not forget to leave a comment or two</p></div>
+                : <></>}
+
                 <p>{date}</p>
                 <div>
                     <p>COMMENTS: </p>

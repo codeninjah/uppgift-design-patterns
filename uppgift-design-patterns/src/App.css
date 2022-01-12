@@ -38,16 +38,14 @@
 }
 
 .sorted-meetups-list {
-  background-color: black;
-  color: white;
-  display: flex;
+  /*display: flex;
   flex-direction: row;
-  /*justify-content: space-around;*/
+  justify-content: space-around;*/
+  /*justify-content: space-between;
+  flex-wrap: wrap; */
+  max-width: 1050px;
   column-gap: 50px;
   row-gap: 50px;
-  justify-content: space-between;
-  max-width: 1050px;
-  flex-wrap: wrap;
   padding: 50px;
 }
 
@@ -68,9 +66,14 @@
   width: 50%;
 }
 
-ol  {
+.sorted-meetups-list  {
   list-style-type: none;
 }
+
+ul {
+  list-style-type: none;
+}
+
 
 .inputContainer {
   margin-top: 25px;
