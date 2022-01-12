@@ -40,7 +40,7 @@ const MeetupItem = ({id, name, date, comments, addComment}:props) => {
                             comments.map(comments => <li>{comments}</li>) 
                         }
                     </ul> 
-                    { showButton ? <button onClick={attendBtnStuff} data-test="meetups-input">Attend</button> : <></> }
+                    { showButton ? <div className="attend-btn"><button onClick={attendBtnStuff} data-test="meetups-input">Attend</button></div> : <></> }
 
                             { showCommentary ? <div className="member-comment"><button data-test="meetups-comment-btn" onClick={() => addComment(id, inputComment)}>Comment</button>
                             <input type="text" data-test="meetups-comment-field" placeholder="Your comment here" value={inputComment} onChange={(ev: React.ChangeEvent<HTMLInputElement>,) => setInputComment(ev.target.value)}></input></div> : <></> }

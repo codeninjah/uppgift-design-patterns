@@ -51,6 +51,10 @@ export const MeetupsView = () => {
             ): void => setInputValue(ev.target.value)}
           />
         </div>
+        <div>
+            <img className="header-image" src="https://it-kanalen.se/wp-content/uploads/2021/04/f54fe04bddc90aa10037fcd9f770b9a73d7902b2-1.jpg"></img>
+            <p className="header-text">Here's a list of upcoming Meetups. We'd want you to enjoy them. Attent, connect and network, welcome to the best Meetups.</p>
+        </div>
             <div className="meetups-list">
 
                 <ol className="sorted-meetups-list">

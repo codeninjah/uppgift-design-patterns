@@ -45,17 +45,12 @@
   flex-wrap: wrap; */
   max-width: 600px;
   padding: 50px;
+  margin: auto;
 }
 
 .sorted-meetups-list-item {
   max-width: 250px;
   padding: 10px;
-}
-
-.sorted-meetups-list-item:hover {
-  max-width: 250px;
-  border: 1px solid white;
-  height: 75px;
 }
 
 .meetups-list {
@@ -79,6 +74,7 @@ ul {
 
 article {
   border: 1px solid black;
+  margin-bottom: 20px;
 }
 
 .kommentarer {
@@ -111,6 +107,11 @@ article {
   margin-top: 15px;
 }
 
+.attend-btn {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
 .event-details {
   font-style: italic;
   padding: 20px;
@@ -119,4 +120,18 @@ article {
 img {
   width: 400px;
   height: auto;
+}
+
+.header-image {
+  width: 600px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.header-text {
+  width: 600px;
+  height: auto;
+  margin: auto;
+  font-style: italic;
+  font-size: 24px;
 }
