@@ -63,7 +63,7 @@ export const MeetupsView = () => {
                 console.log("b is: " + b[0].name) //Object object object .... 
                 console.log(b[5].date)
             //var c = newCommentsList.find((item:any) => item.id == id)            
-            document.getElementsByTagName("li")[0].innerText = newCommentsList
+            //document.getElementsByTagName("li")[0].innerText = newCommentsList
             }
 
             /*
@@ -84,6 +84,8 @@ export const MeetupsView = () => {
                 console.log(id)
                 console.log(meetupinterestedby)
                 console.log("Was here");
+                meetupinterestedby.comments.push("Alex in the house")
+                return meetupinterestedby
             }
     }
 
@@ -135,7 +137,7 @@ export const MeetupsView = () => {
                                 <article key={item.id} onClick={() => goToMeetup(item.id)}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments} />
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
-                                        <p id="test-comments-test"></p>
+                                        {item.commets}
                                        
                             {/* Följande har bortkommenterats för att få applikationen att köra igång */}
                             {/* <ul className="kommentarer">
