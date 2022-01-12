@@ -52,18 +52,26 @@ export const MeetupsView = () => {
             setShowComments(newCommentsList)
 
             //Köra på localStorage?
+            //Lagra sen printa?
             localStorage.setItem("comments", JSON.stringify(newCommentsList))    
+
             var a = localStorage.getItem("comments")
-            console.log("a is: " + a)
+            console.log("a is: " + a) //Prints
+            var b = []
+            if(a) {
+            b = JSON.parse(a) 
+                console.log("b is: " + b[0].name) //Object object object .... 
+                console.log(b[5].date)
+            //var c = newCommentsList.find((item:any) => item.id == id)            
+            document.getElementsByTagName("li")[0].innerText = newCommentsList
+            }
 
-
-            //Programmet kraschar när man kör följande for-loop
-            //Det ska nog inte gå att skriva till JSON fil på detta sätt
             /*
-            for(var meetup in meetupsListJSON){
-                fs.writeFileSync("testdatabase.json", meetup)
+            for(var meetup in newCommentsList){
+                fs.writeFileSync("testfile.json", meetup)
             }
             */
+
     }
 
 
@@ -127,13 +135,14 @@ export const MeetupsView = () => {
                                 <article key={item.id} onClick={() => goToMeetup(item.id)}>
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments} />
                                         { showButton ? <button onClick={registerBtnStuff} data-test="meetups-input">Register</button> : <></> }
+                                        <p id="test-comments-test"></p>
                                        
                             {/* Följande har bortkommenterats för att få applikationen att köra igång */}
-                               {/* <ul className="kommentarer">
+                            {/* <ul className="kommentarer">
                                 {
-                                    meetupsListJSON.map((item:any) => <li className="kommentar" key={item}>{item.date}</li>)                                   
+                                    meetupsListJSON.map((item:any) => <li className="kommentar" key={item}>{item.comments}</li>)                                
                                 }
-                            </ul>  */}  
+                            </ul>  */} 
 
                                 { showCommentary ? <div className="member-comment"><button  data-test="meetups-comment-btn" onClick={() => ShareComment(item.id)}>Share</button>
                                 <input type="text"  data-test="meetups-comment-field" placeholder="Your comment here"></input></div> : <></> }
