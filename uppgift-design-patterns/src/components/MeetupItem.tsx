@@ -27,13 +27,13 @@ const MeetupItem = ({id, name, date, comments, addComment}:props) => {
             <>
                 <h1>{name}</h1>
                 
-                { showDetails ? <div><h3>Welcome to our event!</h3>
-                <p>We hope you enjoy it, we cannot wait for you to experience it and please do not forget to leave a comment or two</p></div>
+                { showDetails ? <div><h3>Welcome to our event! <img src="https://www.seekpng.com/png/detail/9-93808_golden-stars-png-golden-star-transparent.png"></img></h3>
+                <p className="event-details">We hope you enjoy it, we cannot wait for you to experience it and please do not forget to leave a comment or two</p></div>
                 : <></>}
 
                 <p>{date}</p>
                 <div>
-                    <p>COMMENTS: </p>
+                    <p>COMMENTS:</p>
 
                     <ul>
                         {                     

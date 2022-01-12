@@ -43,9 +43,7 @@
   justify-content: space-around;*/
   /*justify-content: space-between;
   flex-wrap: wrap; */
-  max-width: 1050px;
-  column-gap: 50px;
-  row-gap: 50px;
+  max-width: 600px;
   padding: 50px;
 }
 
@@ -111,4 +109,14 @@ article {
 .member-comment {
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+.event-details {
+  font-style: italic;
+  padding: 20px;
+}
+
+img {
+  width: 400px;
+  height: auto;
 }
