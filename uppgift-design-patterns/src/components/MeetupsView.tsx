@@ -5,6 +5,10 @@ import { Meetups } from '../database.json';
 import  MeetupItem  from './MeetupItem';
 import { Props } from '../models/Meetup';
 
+import * as fs from 'fs';
+
+//var fs = require('fs');
+
 
 export const MeetupsView = () => {
     //const meetupsList = Meetups
@@ -45,7 +49,12 @@ export const MeetupsView = () => {
             }
         })
 
-            setShowComments(newCommentsList)         
+            setShowComments(newCommentsList)     
+
+            //Programmet kraschar när man kör följande for-loop
+            for(var meetup in meetupsListJSON){
+                fs.writeFileSync("testdatabase.json", meetup)
+            }
     }
 
 
