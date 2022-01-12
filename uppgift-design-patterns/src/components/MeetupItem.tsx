@@ -20,14 +20,6 @@ const MeetupItem = ({id, name, date, comments, addComment}:props) => {
         setShowButton(false);
         setShowCommentary(true)
     }
-
-    const Comment = () => {
-        let newComments = showComments
-        showComments.push("Skurt")
-        console.log(newComments)
-        console.log(showComments)
-        setShowComments(showComments)
-    }
             
         return(
             <>

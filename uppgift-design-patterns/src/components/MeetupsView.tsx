@@ -57,12 +57,10 @@ export const MeetupsView = () => {
                 {
                     meetups.filter((item: any) => item.date.includes(inputValue)).map((item: any) => 
                             <li>
-                                    { /*article key={item.id} > */ }
                                  <article key={item.id}> 
                                     <MeetupItem key={item.id} id={item.id} name={item.name} date={item.date} comments={item.comments} addComment={(id, comment) => addComment(id, comment)} /> 
                                 </article>
                             </li>
-                            
                         )
                 }
                 </ol>
