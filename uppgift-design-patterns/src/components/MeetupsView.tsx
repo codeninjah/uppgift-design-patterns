@@ -58,6 +58,7 @@ export const MeetupsView = () => {
 
 
             //Programmet kraschar när man kör följande for-loop
+            //Det ska nog inte gå att skriva till JSON fil på detta sätt
             /*
             for(var meetup in meetupsListJSON){
                 fs.writeFileSync("testdatabase.json", meetup)
