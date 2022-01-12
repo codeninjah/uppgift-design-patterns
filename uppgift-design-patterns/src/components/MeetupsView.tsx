@@ -49,12 +49,20 @@ export const MeetupsView = () => {
             }
         })
 
-            setShowComments(newCommentsList)     
+            setShowComments(newCommentsList)
+
+            //Köra på localStorage?
+            localStorage.setItem("comments", JSON.stringify(newCommentsList))    
+            var a = localStorage.getItem("comments")
+            console.log("a is: " + a)
+
 
             //Programmet kraschar när man kör följande for-loop
+            /*
             for(var meetup in meetupsListJSON){
                 fs.writeFileSync("testdatabase.json", meetup)
             }
+            */
     }
 
 
