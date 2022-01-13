@@ -6,11 +6,12 @@ type props = {
     id: string,
     name: string,
     date: string,
+    description: string,
     comments: string[],
     addComment: (id:string, comment:string) => void
  }
 
-const MeetupItem = ({id, name, date, comments, addComment}:props) => {
+const MeetupItem = ({id, name, date, description, comments, addComment}:props) => {
     let [showButton, setShowButton]  = useState(true);
     let [showCommentary, setShowCommentary] = useState(false)
     let [showDetails, setShowDetails] = useState(false)
@@ -27,11 +28,13 @@ const MeetupItem = ({id, name, date, comments, addComment}:props) => {
             <>
                 <h1>{name}</h1>
                 
-                { showDetails ? <div><h3>Welcome to our event! <img src="https://www.seekpng.com/png/detail/9-93808_golden-stars-png-golden-star-transparent.png"></img></h3>
+                { showDetails ? <div><h3>Welcome to our event!</h3> 
+                    <p><img src="https://www.seekpng.com/png/detail/9-93808_golden-stars-png-golden-star-transparent.png"></img></p>
                 <p className="event-details">We hope you enjoy it, we cannot wait for you to experience it and please do not forget to leave a comment or two</p></div>
                 : <></>}
 
-                <p>{date}</p>
+                <p className="date">DATE: {date}</p>
+                <p className="description">{description}</p>
                 <div>
                     <p>COMMENTS:</p>
 
@@ -43,7 +46,7 @@ const MeetupItem = ({id, name, date, comments, addComment}:props) => {
                     { showButton ? <div className="attend-btn"><button onClick={attendBtnStuff} data-test="meetups-input">Attend</button></div> : <></> }
 
                             { showCommentary ? <div className="member-comment"><button data-test="meetups-comment-btn" onClick={() => addComment(id, inputComment)}>Comment</button>
-                            <input type="text" data-test="meetups-comment-field" placeholder="Your comment here" value={inputComment} onChange={(ev: React.ChangeEvent<HTMLInputElement>,) => setInputComment(ev.target.value)}></input></div> : <></> }
+                            <input type="text" data-test="meetups-comment-field" placeholder="Leave a comments" value={inputComment} onChange={(ev: React.ChangeEvent<HTMLInputElement>,) => setInputComment(ev.target.value)}></input></div> : <></> }
    
                 </div>
             </>

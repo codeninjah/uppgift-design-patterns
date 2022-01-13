@@ -135,3 +135,12 @@ img {
   font-style: italic;
   font-size: 24px;
 }
+
+.description {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.description {
+  font-weight: 600;
+}
