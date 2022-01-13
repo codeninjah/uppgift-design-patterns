@@ -29,7 +29,7 @@ const MeetupItem = ({id, name, date, description, comments, addComment}:props) =
                 <h1>{name}</h1>
                 
                 { showDetails ? <div><h3>Welcome to our event!</h3> 
-                    <p><img src="https://www.seekpng.com/png/detail/9-93808_golden-stars-png-golden-star-transparent.png"></img></p>
+                    <p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Golden_star.svg"></img></p>
                 <p className="event-details">We hope you enjoy it, we cannot wait for you to experience it and please do not forget to leave a comment or two</p></div>
                 : <></>}
 
@@ -40,10 +40,10 @@ const MeetupItem = ({id, name, date, description, comments, addComment}:props) =
 
                     <ul>
                         {                     
-                            comments.map(comments => <li>{comments}</li>) 
+                            comments.map(comment => <li data-test="comment-item">{comment}</li>) 
                         }
                     </ul> 
-                    { showButton ? <div className="attend-btn"><button onClick={attendBtnStuff} data-test="meetups-input">Attend</button></div> : <></> }
+                    { showButton ? <div className="attend-btn"><button onClick={attendBtnStuff} data-test="attend-btn">Attend</button></div> : <></> }
 
                             { showCommentary ? <div className="member-comment"><button data-test="meetups-comment-btn" onClick={() => addComment(id, inputComment)}>Comment</button>
                             <input type="text" data-test="meetups-comment-field" placeholder="Leave a comments" value={inputComment} onChange={(ev: React.ChangeEvent<HTMLInputElement>,) => setInputComment(ev.target.value)}></input></div> : <></> }
