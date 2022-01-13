@@ -36,7 +36,7 @@ const MeetupItem = ({id, name, date, description, comments, addComment}:props) =
                 <p className="date">DATE: {date}</p>
                 <p className="description">{description}</p>
                 <div>
-                    <p>COMMENTS:</p>
+                    <p>Comments:</p>
 
                     <ul>
                         {                     

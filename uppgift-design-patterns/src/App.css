@@ -70,6 +70,9 @@ ul {
 
 .inputContainer {
   margin-top: 25px;
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 650px;
 }
 
 article {
