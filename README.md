@@ -17,7 +17,7 @@ En Meetup är en sammankomst för personer med ett gemensamt intresse. Det kan h
 - Som en besökare vill jag att passerade meetups ska markeras tydligt, så att jag inte försöker anmäla mig till något som redan har varit.<br/>
   DOD: Passerade meetups ska ha någon form av styling så att det är tydligt att de passerat<br/>
   
-- Som besökare vill jag kunna diskutera evenemang därför att vi kan komma med konstruktiv kritik.<br/>
+- Som besökare vill jag kunna posta kommentarer därför att jag vill ha möjligheten att ge feedback<br/>
   DOD: Kommentarer ska lagras. localStorage? JSON?<br/>
 
 ## Uppgiftsbeskrivning
