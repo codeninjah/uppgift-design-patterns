@@ -14,9 +14,6 @@ En Meetup är en sammankomst för personer med ett gemensamt intresse. Det kan h
      : Spara detta i localStorage<br/>
      : Något speciellt styling över dessa så att man vet man registerat sig<br/>
   
-- Som en besökare vill jag att passerade meetups ska markeras tydligt, så att jag inte försöker anmäla mig till något som redan har varit.<br/>
-  DOD: Passerade meetups ska ha någon form av styling så att det är tydligt att de passerat<br/>
-  
 - Som besökare vill jag kunna posta kommentarer därför att jag vill ha möjligheten att ge feedback<br/>
   DOD: Kommentarer ska lagras. localStorage? JSON?<br/>
 
